@@ -9,10 +9,10 @@ import classNames from "classnames";
 
 const Form = ({ onSubmit }) => {
   const [page, setPage] = useState(0);
-
+ 
   const pageDisplay = () => {
     if (page === 0) {
-      return <Step1 />;
+      return <Step1  />;
     } else if (page === 1) {
       return <Step2 />;
     } else if (page === 2) {
@@ -34,7 +34,7 @@ const Form = ({ onSubmit }) => {
   }, [page]);
 
   return (
-    <div className="flex flex-col justify-between h-screen py-10 p-10 lg:px-32 ">
+    <div className="flex flex-col justify-between h-screen  p-10 lg:px-32 ">
       <div className="flex items-center  mb-4 ">
         <button
           disabled={page === 0}

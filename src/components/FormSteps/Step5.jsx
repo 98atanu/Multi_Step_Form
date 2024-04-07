@@ -5,8 +5,8 @@ import img2 from '../../assets/img2.jpg'
 const Step5 = () => {
   return (
     <div className="flex gap-20 flex-col md:flex-row">
-      <div className=" flex flex-1 items-center h-full justify-center">
-        <img src={img2} alt="" />
+      <div className=" flex flex-1 items-center h-full justify-center ">
+        <img className=" w-45 h-45 lg:p-20 overflow-hidden" src={img2} alt="" />
       </div>
       <div className="flex flex-1 flex-col items-start justify-center">
         <h1 className="font-bold text-3xl mb-6">You're on your way!</h1>

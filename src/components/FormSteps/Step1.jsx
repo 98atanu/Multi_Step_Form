@@ -14,8 +14,8 @@ const Step1 = () => {
         <h1 className="font-bold text-3xl mb-2">Which Describes you best?</h1>
         <p className="mb-8 text-sm">This will help us personalize your experience.</p>
 
-        <div className=" cursor-pointer md:w-[40vw]   ">
-          <div className=" flex items-center gap-1 px-2 py-2 rounded-md border-[1px] border-zinc-200 hover:border-zinc-400 shadow-sm hover:shadow-zinc-600 mb-2 hover:bg-slate-50 ">
+        <div  className=" cursor-pointer md:w-[40vw]   ">
+          <div  className=" flex items-center gap-1 px-2 py-2 rounded-md border-[1px] border-zinc-200 hover:border-zinc-400 shadow-sm hover:shadow-zinc-600 mb-2 hover:bg-slate-50  ">
             <span className="text-2xl p-1 text-teal-800 mr-4 shadow-sm shadow-teal-700 rounded-full "><IoPeople /></span>
             <span className="font-semibold ">Student </span> 
             <h1 >or soon to be enrolled</h1>
