@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import LearnPaths from "./LearnPaths";
 import Submission from "./Submission";
 import Form from "./Form";
+import LearningPaths from "./LearningPaths";
 
 const Container = () => {
   const [submissionState, setSubmissionState] = useState(false);
@@ -18,7 +18,7 @@ const Container = () => {
   return (
     <div className="">
       {!submissionState && <Form onSubmit={onFormSubmit} />}
-      {submissionState && !loading && <LearnPaths />}
+      {submissionState && !loading && <LearningPaths />}
       {submissionState && loading && <Submission />}
     </div>
   );
