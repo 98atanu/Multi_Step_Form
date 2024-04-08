@@ -9,16 +9,51 @@ import classNames from "classnames";
 
 const Form = ({ onSubmit }) => {
   const [page, setPage] = useState(0);
- 
+  const [formData, setFormData] = useState({
+    profession: "",
+    interest: "",
+    math_level: "",
+  });
+  console.log("formdata",formData)
+
+  const handleForm = useCallback(
+    (step, data) => {
+      switch (step) {
+        case 1:
+          setFormData((preState) => ({
+            ...preState,
+            profession: data,
+          }));
+          break;
+        case 2:
+          setFormData((preState) => ({
+            ...preState,
+            interest: data,
+          }));
+          break;
+        case 3:
+          setFormData((preState) => ({
+            ...preState,
+            math_level: data,       
+          }));
+          break;
+        default:
+          console.error(`Unknown field type: ${data}`);
+          break;
+      }
+    },
+    [setFormData]
+  );
+
   const pageDisplay = () => {
     if (page === 0) {
-      return <Step1  />;
+      return <Step1 formData={formData} handleForm={handleForm} />;
     } else if (page === 1) {
-      return <Step2 />;
+      return <Step2 formData={formData} handleForm={handleForm} />;
     } else if (page === 2) {
       return <Step3 />;
     } else if (page === 3) {
-      return <Step4 />;
+      return <Step4 formData={formData} handleForm={handleForm} />;
     } else {
       return <Step5 />;
     }
@@ -45,7 +80,7 @@ const Form = ({ onSubmit }) => {
         >
           <MdExpandLess />
         </button>
-        <div className="relative w-full h-2 rounded-xl overflow-hidden">
+        <div className="relative w-full h-2 rounded-xl overflow-hidden ">
           <div className="absolute h-full w-full">
             <div
               className={`border-[2px] h-full bg-[#199e7f] rounded-xl ${

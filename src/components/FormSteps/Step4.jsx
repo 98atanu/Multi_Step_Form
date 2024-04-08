@@ -1,11 +1,11 @@
 import React from "react";
 
-const Step4 = () => {
+const Step4 = ({formData, handleForm}) => {
   const levels = [
     { 
         level: "Introductory", 
         topic: "Arithmetic", 
-        example: "5 × 1/2 = ?",
+        example: "5 * 1/2 = ?",
     },
     { 
         level: "Foundational", 
@@ -31,7 +31,10 @@ const Step4 = () => {
 
       <div className="flex gap-[1vw] flex-wrap justify-center ">
         {levels.map((item,index) => (
-          <div key={index} className="flex flex-col items-center border-[2px] hover:border-[#e0c790] hover:shadow-md hover:shadow-zinc-200 p-8 rounded-md ">
+          <div 
+          key={index} 
+          onClick={()=>handleForm(3,index)}
+          className={`flex flex-col items-center border-[2px] hover:border-[#e0c790] hover:shadow-md hover:shadow-zinc-200 p-8 rounded-md ${formData.math_level === index ? "border-zinc-400 shadow-zinc-600 mb-2 bg-slate-50" : " "}`}>
             <div className=" mb-6">{item.example}</div>
             <div className="font-semibold leading-none">{item.topic}</div>
             <div>{item.level}</div>
